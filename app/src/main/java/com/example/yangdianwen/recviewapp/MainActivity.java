@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -29,8 +30,10 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         rc_view = (RecyclerView) findViewById(R.id.rv);
-        //recycle设置布局管理器
-        rc_view.setLayoutManager(new LinearLayoutManager(this));
+        // recycle设置布局管理器
+        // LinearLayoutManager 线性排布规则
+        // GridLayoutManager 表格排布规则
+        rc_view.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         //执行异步任务加载数据
         new MyAsyncTask().execute();
     }
