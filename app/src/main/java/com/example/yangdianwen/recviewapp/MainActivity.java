@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity  {
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
         }
+
+
+    //解析json数据的方法
         private List<JsonBean.Results> Parsegson(String json) {
             mArrayList = new ArrayList<>();
             Gson gson = new Gson();

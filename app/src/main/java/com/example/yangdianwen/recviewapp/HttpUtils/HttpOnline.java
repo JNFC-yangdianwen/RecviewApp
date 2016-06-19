@@ -51,7 +51,7 @@ public class HttpOnline {
             //创建缓冲区
 
             String line = null;
-            while ((line = br.readLine()) != null) {
+            while ((line= br.readLine()) != null) {
                 sb.append(line);
             }
 

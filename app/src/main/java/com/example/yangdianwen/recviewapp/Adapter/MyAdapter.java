@@ -55,6 +55,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
     public void onBindViewHolder(MyViewHolder holder, int position) {
         JsonBean.Results jsonBean=mData.get(position);
            holder.textView.setText(jsonBean.getDesc());
+        holder.textView1.setText(jsonBean.getPublishedAt());
+        holder.textView3.setText(jsonBean.getWho());
     }
     @Override
     public int getItemCount() {
@@ -72,10 +74,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
      */
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textView;
+        TextView textView1;
+        TextView textView3;
         //MyViewHolder的构造器，对cardview中的控件进行初始化，初始化listener
         public MyViewHolder(View itemView,MyItemClickListener listener) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.cd_tv);
+            textView1=(TextView)itemView.findViewById(R.id.cd_tv1);
+            textView3=(TextView)itemView.findViewById(R.id.cd_tv3);
             mListener=listener;
             itemView.setOnClickListener(this);
         }
